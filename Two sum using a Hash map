@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int n, target, i, j;
+
+    scanf("%d", &n);
+
+    int prices[n];
+
+    for (i = 0; i < n; i++)
+        scanf("%d", &prices[i]);
+
+    scanf("%d", &target);
+
+    for (i = 0; i < n; i++) {
+        for (j = i + 1; j < n; j++) {
+            if (prices[i] + prices[j] == target) {
+                printf("%d %d\n", i, j);
+                return 0;
+            }
+        }
+    }
+
+    return 0;
+}
